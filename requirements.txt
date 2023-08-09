@@ -1,2 +1,4 @@
-flask
-flask_bootstrap
+Bootstrap_Flask==2.3.0
+Bootstrap_Flask==2.2.0
+Flask==2.3.2
+Flask_Bootstrap==3.3.7.1
