@@ -3,28 +3,28 @@
 {% block content %}
 <div class="container my-5">
     <h1 class="text-body-emphasis">Favourites:</h1>
-      <div class="text-center bg-body-tertiary rounded-3">
-             <table class="table table-sm col-lg-1 col-md-1">
-              <!-- This is where you will write the code to render a Bootstrap
-              Table that contains all the information from the
-              cafe-data.csv file. -->
-              {% for cafe in data %}
-                {% set i = loop.index0 %}
-                <tr class="table-active">
-                    {% for details in cafe %}
-                     {% if i == 0 %}
-                     <th>{{details}}</th>
-                     {% else %}
-                        {% if "http" in details %}
-                         <td><a href="{{details}}">Link</a></td>
-                     {% else %}
-                      <td>{{details}}</td>
-                     {% endif %}
-                     {% endif %}
-                    {% endfor %}
-                </tr>
-              {% endfor %}
-            </table>
-        </div>
+    <div class="text-center bg-body-tertiary rounded-3">
+        <table class="table table-sm col-lg-1 col-md-1">
+            <!-- This is where you will write the code to render a Bootstrap
+            Table that contains all the information from the
+            cafe-data.csv file. -->
+            {% for cafe in data %}
+            {% set i = loop.index0 %}
+            <tr class="table-active">
+                {% for details in cafe %}
+                {% if i == 0 %}
+                <th>{{details}}</th>
+                {% else %}
+                {% if "http" in details %}
+                <td><a href="{{details}}">Link</a></td>
+                {% else %}
+                <td>{{details}}</td>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
 </div>
 {% endblock %}

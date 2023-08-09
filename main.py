@@ -1,6 +1,7 @@
-from flask_bootstrap import Bootstrap5
-from flask import Flask, render_template
 import csv
+
+from flask import Flask, render_template
+from flask_bootstrap import Bootstrap5
 
 app = Flask(__name__)
 bootstrap = Bootstrap5(app)
@@ -19,6 +20,7 @@ def cafe_list():
         for row in data:
             list_of_rows.append(row)
     return render_template('list.html', data=list_of_rows)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

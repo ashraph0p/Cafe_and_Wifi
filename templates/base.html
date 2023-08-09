@@ -1,47 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        {% block head %}
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        {% block styles %}
-            <!-- Bootstrap CSS -->
-            {{ bootstrap.load_css() }}
-        {% endblock %}
+<head>
+    {% block head %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    {% block styles %}
+    <!-- Bootstrap CSS -->
+    {{ bootstrap.load_css() }}
+    {% endblock %}
 
-        <title>{% block title %}Your page title {% endblock %}</title>
-        {% endblock %}
-    </head>
-    <header>
-        {% block nav %}
-        <nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Eleventh navbar example">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Concept Cafe List</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <title>{% block title %}Your page title {% endblock %}</title>
+    {% endblock %}
+</head>
+<header>
+    {% block nav %}
+    <nav aria-label="Eleventh navbar example" class="navbar navbar-expand-lg bg-body-tertiary rounded">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Concept Cafe List</a>
+            <button aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+                    data-bs-target="#navbarsExample09" data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarsExample09">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/cafe-list">List</a>
-            </li>
-          </ul>
+            <div class="collapse navbar-collapse" id="navbarsExample09">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a aria-current="page" class="nav-link active" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cafe-list">List</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
-        {% endblock %}
-    </header>
-    <body>
-        {% block content %}
-        {% endblock %}
-        {% block scripts %}
-            <!-- Optional JavaScript -->
-            {{ bootstrap.load_js() }}
-        {% endblock %}
-    </body>
+    {% endblock %}
+</header>
+<body>
+{% block content %}
+{% endblock %}
+{% block scripts %}
+<!-- Optional JavaScript -->
+{{ bootstrap.load_js() }}
+{% endblock %}
+</body>
 </html>
