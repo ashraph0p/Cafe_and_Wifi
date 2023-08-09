@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} Best Cafes{% endblock %}
+
+{% block content %}
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold text-body-emphasis">Favourite Cafe List</h1>
+    <p class="lead mb-4">Want to know where are great places to drink and work?</p>
+    <hr>
+    <div class="col-lg-6 mx-auto">
+      <h5 class="mb-4 h5">Even though I dislike coffee, I love cafes. Checkout my favourite selection of cafes with data on power socket availability, Wi-Fi speed and drinks.</h5>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <a class="btn btn-primary btn-lg px-2 gap-4" href="/cafe-list"> Click Here!</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
