@@ -1,6 +1,5 @@
-import csv
-
-from flask import Flask, render_template
+# import csv
+from flask import Flask, render_template, redirect
 from flask_bootstrap import Bootstrap5
 from flask_wtf import FlaskForm
 from wtforms import StringField, SelectField, SubmitField, TimeField
@@ -49,28 +48,31 @@ def home():
 
 @app.route('/cafe-list')
 def cafe_list():
-    with open("cafe_data.csv", newline='') as file_csv:
-        data = csv.reader(file_csv, delimiter=',')
-        list_of_rows = []
-        for row in data:
-            list_of_rows.append(row)
-    return render_template('list.html', data=list_of_rows)
+    # with open("cafe_data.csv", newline='') as file_csv:
+    #     data = csv.reader(file_csv, delimiter=',')
+    #     list_of_rows = []
+    #     for row in data:
+    #         list_of_rows.append(row)
+    # data=list_of_rows
+    all_cafes = CafeDB.query.all()
+    return render_template('list.html', cafes=all_cafes)
 
 
 @app.route("/add", methods=["POST", "GET"])
 def add_to_list():
     form = CafeForm()
     if form.validate_on_submit():
-        f = open("cafe_data.csv", "a")
-        form_list = [form.cafe_name.data,
-                     form.location.data,
-                     str(form.opening_time.data),
-                     str(form.closing_time.data),
-                     form.coffee.data,
-                     form.wifi.data,
-                     form.Power.data]
-        form_1 = ",".join(form_list)
-        f.writelines(f"\n{form_1}")
+        with app.app_context():
+            new_cafe = CafeDB(cafe_name=form.cafe_name.data,
+                              location=form.location.data,
+                              opening_time=str(form.opening_time.data),
+                              closing_time=str(form.closing_time.data),
+                              coffee=form.coffee.data,
+                              wifi=form.wifi.data,
+                              power=form.Power.data)
+            db.session.add(new_cafe)
+            db.session.commit()
+        redirect("/list")
     return render_template('add.html', form=form)
 
 

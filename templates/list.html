@@ -1,27 +1,11 @@
 {% extends 'base.html' %}
+{% from 'bootstrap5/table.html' import render_table %}
 {% block title %}Cafe list{% endblock %}
 {% block content %}
 <div class="container">
     <h1 class="m-5 text-body-emphasis">Favourites:</h1>
-    <div class="p-5 m-5 text-center bg-body-tertiary rounded-3">
-        <table class="table table-sm col-lg-1 col-md-1">
-            {% for cafe in data %}
-            {% set i = loop.index0 %}
-            <tr class="table-active">
-                {% for details in cafe %}
-                {% if i == 0 %}
-                <th>{{details}}</th>
-                {% else %}
-                {% if "http" in details %}
-                <td><a href="{{details}}">Link</a></td>
-                {% else %}
-                <td>{{details}}</td>
-                {% endif %}
-                {% endif %}
-                {% endfor %}
-            </tr>
-            {% endfor %}
-        </table>
+    <div class=" m-5text-center bg-body-tertiary rounded-3">
+        {{ render_table(cafes, urlize_columns=("location")) }}
     </div>
 </div>
 {% endblock %}
