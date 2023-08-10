@@ -1,4 +1,3 @@
 # Cafe_and_Wifi
-Concept Community Cafe Website:
-https://cafe-lists.onrender.com/cafe-list
+Concept Cafe List Website:
 Where you can add your local cafe to a list!
