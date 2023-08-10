@@ -6,10 +6,11 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SelectField, SubmitField, TimeField
 from wtforms.validators import DataRequired, URL
 from flask_sqlalchemy import SQLAlchemy
+import os
 
 db = SQLAlchemy()
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "ronaldihno"
+app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///cafes.db"
 bootstrap = Bootstrap5(app)
 db.init_app(app)
@@ -36,8 +37,11 @@ class CafeDB(db.Model):
     wifi = db.Column(db.String)
     power = db.Column(db.String)
 
+
 with app.app_context():
     db.create_all()
+
+
 @app.route('/')
 def home():
     return render_template('index.html')
