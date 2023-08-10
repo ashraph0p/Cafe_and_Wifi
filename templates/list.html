@@ -2,10 +2,12 @@
 {% from 'bootstrap5/table.html' import render_table %}
 {% block title %}Cafe list{% endblock %}
 {% block content %}
-<div class="container">
-    <h1 class="m-5 text-body-emphasis">Favourites:</h1>
-    <div class=" m-5text-center bg-body-tertiary rounded-3">
-        {{ render_table(cafes, urlize_columns=("location")) }}
+<div class="container my-5">
+  <div class="p-5 text-center bg-body-tertiary rounded-3">
+    <h1 class="text-body-emphasis">Favourites:</h1>
+    <div class="d-inline-flex gap-2 mb-5">
+      {{ render_table(cafes, urlize_columns=("location")) }}
     </div>
+  </div>
 </div>
 {% endblock %}
