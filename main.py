@@ -62,6 +62,7 @@ def cafe_list():
 def add_to_list():
     form = CafeForm()
     if form.validate_on_submit():
+
         with app.app_context():
             new_cafe = CafeDB(cafe_name=form.cafe_name.data,
                               location=form.location.data,
