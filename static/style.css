@@ -1,0 +1,27 @@
+body, .bg-body-tertiary {
+    background-color: #E9CBA7 !important;
+}
+p, h1, h2, h3, h4, h5, .navbar-brand, a, label, input, th, td {
+    color : #482B29 !important;
+    font-family: 'Simonetta', cursive;
+    font-weight: bold;
+}
+.btn-primary {
+    --bs-btn-color: #482B29;
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: #361d1d;
+    --bs-btn-hover-color: #482B29;
+    --bs-btn-hover-bg: transparent;
+    --bs-btn-hover-border-color: #866156;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #4d1b1b;
+    --bs-btn-active-bg: transparent;
+    --bs-btn-active-border-color: #5e2c2c;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.table {
+    --bs-table-bg: #fdddb6 !important;
+}
+.form-control, .form-control:focus, .form-select, .form-select:focus{
+    background-color: beige
+}

@@ -1,5 +1,5 @@
 # import csv
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, url_for
 from flask_bootstrap import Bootstrap5
 from flask_wtf import FlaskForm
 from wtforms import StringField, SelectField, SubmitField, TimeField
@@ -62,7 +62,6 @@ def cafe_list():
 def add_to_list():
     form = CafeForm()
     if form.validate_on_submit():
-
         with app.app_context():
             new_cafe = CafeDB(cafe_name=form.cafe_name.data,
                               location=form.location.data,
@@ -73,7 +72,7 @@ def add_to_list():
                               power=form.Power.data)
             db.session.add(new_cafe)
             db.session.commit()
-        redirect("/list")
+        return redirect(url_for("cafe_list"))
     return render_template('add.html', form=form)
 
 
