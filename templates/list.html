@@ -2,9 +2,9 @@
 {% from 'bootstrap5/table.html' import render_table %}
 {% block title %}Cafe list{% endblock %}
 {% block content %}
-<div class="container my-5">
-  <div class="text-center bg-body-tertiary rounded-3">
-    <h1>Favourites:</h1>
+<div class="container-fluid my-5 px-4">
+  <div class="text-left bg-body-tertiary rounded-3">
+    <h1 class="display-5 fw-bold">Favourites:</h1>
   </div>
   <div class="table-responsive">
     {{ render_table(cafes, urlize_columns=("location")) }}
