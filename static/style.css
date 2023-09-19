@@ -1,7 +1,7 @@
 body, .bg-body-tertiary {
     background-color: #E9CBA7 !important;
 }
-p, h1, h2, h3, h4, h5, .navbar-brand, a, label, input, th, td {
+p, h1, h2, h3, h4, h5, .navbar-brand, a, label, input, th, td, hr, .btn, option, select {
     color : #482B29 !important;
     font-family: 'Simonetta', cursive;
     font-weight: bold;
